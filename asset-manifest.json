@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/alum/static/css/main.2de1d4aa.css",
+    "main.js": "/alum/static/js/main.fc09b051.js",
+    "static/js/377.e209bf48.chunk.js": "/alum/static/js/377.e209bf48.chunk.js",
+    "static/media/homepageimage.jpg": "/alum/static/media/homepageimage.8d95892af2c50815815d.jpg",
+    "static/media/logo.png": "/alum/static/media/logo.9ae9ccbcdce5d1576b1a.png",
+    "static/media/billgates.jpg": "/alum/static/media/billgates.b6ef5e7a30faca89cc7e.jpg",
+    "static/media/loading.svg": "/alum/static/media/loading.330b7d99bfbae8039a5456998d97914f.svg",
+    "index.html": "/alum/index.html",
+    "main.2de1d4aa.css.map": "/alum/static/css/main.2de1d4aa.css.map",
+    "main.fc09b051.js.map": "/alum/static/js/main.fc09b051.js.map",
+    "377.e209bf48.chunk.js.map": "/alum/static/js/377.e209bf48.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2de1d4aa.css",
+    "static/js/main.fc09b051.js"
+  ]
+}
