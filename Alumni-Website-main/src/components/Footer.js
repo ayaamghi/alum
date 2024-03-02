@@ -55,7 +55,7 @@ export default function Footer() {
                 </Grid>
                 <div className="address" id="footerfont">
                     <p className="footertext">
-                        Early College at Guilford | 2021
+                        Early College at Guilford | 2024
                     </p>
                 </div>
             </Container>

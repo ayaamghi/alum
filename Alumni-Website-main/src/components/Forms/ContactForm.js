@@ -7,10 +7,14 @@ import Grid from '@material-ui/core/Grid';
 
 import SendIcon from '@material-ui/icons/Send';
 import Button from '@material-ui/core/Button'
+import '../fonts.css';
+import '../form.css';
 
-import './fonts.css';
-import './form.css';
 
+import CreatableSelect from 'react-select/creatable'
+import {collection, addDoc, setDoc, doc} from "firebase/firestore"
+import {db} from '../../Firebase/firebase.js'
+import { date } from 'date-arithmetic';
   const TextFieldStyled = withStyles({
     root: {
       "& label.Mui-focused": {
@@ -28,16 +32,21 @@ import './form.css';
   })(TextField);
 
 
-export default function UpdateForm() {   
+export default function ContactForm() {   
     // character limit for graduation year
     const CHARACTER_LIMIT = 4; 
     const WORD_CHARACTER_LIMIT = 280; 
     const [values, setValues] = React.useState({
         gradYear: "",
-        initialD: ""
+        first: "", 
+        last: "", 
+        email: "", 
+        number: 0, 
+        activities: ""
     })
+
+
     const handleChange = changeOccured => event => {
-        setValues({...values, [changeOccured]: event.target.value});
         setValues({...values, [changeOccured]: event.target.value});
 
     };
@@ -65,13 +74,16 @@ export default function UpdateForm() {
                             label="First Name"
                             placeholder="John"
                             className = "textFieldStyle"
+                            onChange = {handleChange("first")}
                             />
+
                         </Grid>
                     <Grid item className = "griditem">
                         <TextFieldStyled
                             variant="standard"
                             label="Last Name"
                             placeholder="Doe"
+                            onChange = {handleChange("last")}
                             />
                     </Grid>
                     <Grid item className = "griditem">
@@ -90,49 +102,41 @@ export default function UpdateForm() {
                             variant="standard"
                             label="Email"
                             placeholder="johndoe@example.com"
+                            onChange = {handleChange("email")}
+
+                            />
+                    </Grid>
+                    <Grid item className = "griditem">
+                        <TextFieldStyled
+                            variant="standard"
+                            label="Phone Number"
+                            placeholder="123-456-7890"
+                            onChange = {handleChange("number")}
+
                             />
                     </Grid>
                 </Grid>
-                <Grid 
-                container
-                direction = "row"
-                justify = "center"
-                alignItems = "center"
-                >
-                    <Grid item className = "griditem">
-                        <TextFieldStyled
-                        variant="standard"
-                        label="Short Description"
-                        placeholder="Ex: First Place International Robotics"
-                        id = "shortDescription"
-                        />
-                    </Grid>
-                    <Grid item className = "griditem">
-                        <TextFieldStyled 
-                        variant="standard"
-                        label="Date of Event"
-                        type="date"
-                        defaultValue = {todaysDate}
-                        />
-                    </Grid>
+                <Grid item className = "griditem">
+
+                <CreatableSelect 
+
+                 
+                  styles={{
+                    control: (baseStyles, state) => ({
+                      ...baseStyles,
+                      borderColor: state.isFocused ? '#5f181b' : 'gray'
+                    })}}
+                
+                closeMenuOnSelect = {false} isMulti isClearable options={options}
+                
+                onChange = {(selectedValue) => setValues({ ...values, activities: selectedValue })}
+                    
+                />
+
                 </Grid>
-                <Grid item id = "tellUsMoreGrid">
-                <TextFieldStyled
-                    multiline
-                    rows = {5}
-                    id = "multiline"
-                    variant="outlined"
-                    label="Your Update"
-                    placeholder="Tell us more about what you've done..."
-                    inputProps = {{
-                        maxLength: WORD_CHARACTER_LIMIT
-                    }}
-                    helperText = {`${values.initialD.length}/${WORD_CHARACTER_LIMIT}`}  
-                    onChange = {handleChange("initialD")}
-                    /> 
-                </Grid> 
+
                 <Grid item>
-                    <Button id="submit-font">
+                    <Button id="submit-font" onClick={() => clickSubmit(values)} >
                         <SendIcon/>
                         Submit
                     </Button>
@@ -141,3 +145,33 @@ export default function UpdateForm() {
         </div>
     );
 }
+
+const options = [
+    { value: '1', label: 'Option 1' },
+    { value: '2', label: 'Option 2' },
+    {value: '3', label: 'Option 3'}
+  ];
+  
+
+ const clickSubmit  = async (props) => { 
+
+    
+//    console.log(props)
+    setDoc(doc(db, "test_contact", `${Date.now()}${props.first}`), {
+        date: props.gradYear, 
+       first: props.first,
+       last: props.last, 
+       email: props.email,
+       activities: props.activities
+    }
+    )
+
+
+}
+
+      //  const time = Date.now().toString()
+
+      //  console.log(time)
+
+
+

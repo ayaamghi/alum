@@ -5,13 +5,13 @@ import About from './components/About';
 
 import AlumniSpotlight from './components/AlumniSpotlight';
 import AlumniNews from './components/AlumniNews';
-import ShareYourNews from './components/ShareYourNews';
+import ShareYourNews from './components/Forms/ShareYourNews';
 import Profile from './components/Profile';
 import ProfileTemp from './components/ProfileTemp';
 import Loading from './components/loading';
 import ScrollToTop from './components/ScrollToTop';
 import EventCalendar from './components/EventCalendar';
-import UpdateForm from './components/UpdateForm';
+import UpdateForm from './components/Forms/UpdateForm';
 
 
 import {Switch, Route} from 'react-router-dom';

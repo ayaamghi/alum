@@ -44,13 +44,7 @@ const NavBar = () => {
     <div className="menu-content">
       <div id="drawertop">
         <Grid container id="container">
-          <Grid item xs={4} align="left">
-              <LoginButton />
-              <LogoutButton />
-          </Grid>
-          <Grid item xs={4} align="center">
-          </Grid>
-          <Grid item xs={4} align="right">
+          <Grid item xs={12} align="right">
             <IconButton id="drawer-button" onClick={toggleDrawer("right", false)}>
               <CloseIcon />
             </IconButton> 
@@ -130,17 +124,6 @@ const NavBar = () => {
           </ListItem>
         </RouterLink>
 
-        <RouterLink to="/profile" onClick={toggleDrawer("right", false)} style={{ textDecoration: 'none' }}> 
-          <ListItem 
-            divider 
-            button
-          >
-            <ListItemIcon>
-              <AccountCircle />
-            </ListItemIcon>
-            <ListItemText disableTypography="true" id="drawer-list-font" primary="Profile" />
-          </ListItem>
-        </RouterLink>
 
       </List>
     </div>

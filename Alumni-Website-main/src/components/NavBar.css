@@ -1,3 +1,10 @@
+
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
 #link {
     cursor:pointer;
 }
@@ -7,7 +14,7 @@
 }
 
 #drawertop {
-    background-color: #5f181b;
+    background-color: white;
     height: 64px;
 }
 
@@ -49,5 +56,5 @@ img#toolbar-image {
 
 #drawer-button {
     padding: 20px;
-    color: white;
+    color: 5f181b;
 }
