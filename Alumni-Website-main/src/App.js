@@ -5,7 +5,7 @@ import About from './components/About';
 
 import AlumniSpotlight from './components/AlumniSpotlight';
 import AlumniNews from './components/AlumniNews';
-import ShareYourNews from './components/Forms/ShareYourNews';
+import ShareYourNews from './components/Forms/ConnectPage';
 import Profile from './components/Profile';
 import ProfileTemp from './components/ProfileTemp';
 import Loading from './components/loading';
@@ -17,6 +17,7 @@ import UpdateForm from './components/Forms/UpdateForm';
 import {Switch, Route} from 'react-router-dom';
 // import { useAuth0 } from '@auth0/auth0-react';
 import { CssBaseline } from '@material-ui/core';
+import TopNav from './components/TopNav';
 
 const App = () => {
   // const { isLoading } = useAuth0();
@@ -25,13 +26,13 @@ const App = () => {
   //   return <Loading />
   // }
 
-  console.log(process.env.REACT_APP_AUTH0_CLIENT_ID)
-  return (  
+    return (  
     <div>
       <CssBaseline />
       <ScrollToTop />
       <NavBar />
-      <Switch>
+      <TopNav /> 
+       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/alumni-spotlight" component={AlumniSpotlight} /> 

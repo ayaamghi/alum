@@ -48,7 +48,8 @@ export default function ContactForm() {
         last: "", 
         email: "", 
         number: 0, 
-        activities: ""
+        activities: "",
+        involvement: ""
     })
 
 
@@ -126,7 +127,7 @@ export default function ContactForm() {
 
                 <CreatableSelect 
 
-                 
+                 placeholder = "Select Activities During High School"
                   styles={{
                     control: (baseStyles, state) => ({
                       ...baseStyles,
@@ -138,9 +139,26 @@ export default function ContactForm() {
                 onChange = {(selectedValue) => setValues({ ...values, activities: selectedValue })}
                     
                 />
-
                 </Grid>
-                <Grid item>
+                <Grid item className = "griditem">
+
+                  <CreatableSelect 
+
+                  placeholder = "Select Interests"
+                  styles={{
+                    control: (baseStyles, state) => ({
+                      ...baseStyles,
+                      borderColor: state.isFocused ? '#5f181b' : 'gray'
+                    })}}
+
+                  closeMenuOnSelect = {false} isMulti isClearable options={involvements}
+
+                  onChange = {(selectedValue) => setValues({ ...values, involvement: selectedValue })}
+                    
+                  />
+</Grid>
+
+                 <Grid item>
                   <ReCAPTCHA className = "griditem" sitekey= {process.env.REACT_APP_RECAPTCHA_SITE} 
   onChange={() => setCaptchaDone(true)}
   / >
@@ -160,12 +178,30 @@ export default function ContactForm() {
     );
 }
 
-const options = [
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    {value: '3', label: 'Option 3'}
-  ];
-  
+
+//TODO cleanup this code and see if you can do this without having the doubles 
+const involvements = []
+const involvementOpps = [
+  "Alumni Speaker", "Mentorship", "Donation Campaign"
+]
+
+
+for( const involv of involvementOpps) { 
+
+involvements.push({value: involv, label: involv})
+}
+
+
+const options = []
+const activities = [
+  "Robotics", "Model UN", "Journalism", "NHD", "Economics Club"
+]
+
+
+for( const activity of activities) { 
+
+options.push({value: activity, label: activity})
+}
 
  const clickSubmit  = async (props) => { 
 
@@ -176,7 +212,8 @@ const options = [
        first: props.first,
        last: props.last, 
        email: props.email,
-       activities: props.activities
+       activities: props.activities, 
+       invovlement: props.involvement
     }
     )
 

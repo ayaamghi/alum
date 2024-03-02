@@ -7,6 +7,7 @@ import '../main.css';
 import { Typography, Container, Divider } from '@material-ui/core';
 
 
+//TODO see if you can make a generic for both contact forms
 export default function ShareYourNews() {   
 
     return (
@@ -26,7 +27,17 @@ export default function ShareYourNews() {
                         >
                             Connect with ECG. We want to stay in touch with our alumni!
                     </Typography>
-                  
+                    <Typography 
+                        id="bodyfont"
+                        variant="body1"
+                        align="left"
+                        style = {{marginBottom: "35px"}}
+                        >
+                            Update your contact information-- we'll reach out to you regarding upcoming events and oppourtunities to get involved. 
+                    </Typography>
+
+                    <ContactForm />
+
                     <Typography 
                         id="bodyfont"
                         variant="body1"
@@ -38,16 +49,6 @@ export default function ShareYourNews() {
 
                     <UpdateForm />
                     <div style={{ marginTop: '80px' }}>
-                    <Typography 
-                        id="bodyfont"
-                        variant="body1"
-                        align="left"
-                        style = {{marginBottom: "35px"}}
-                        >
-                            Update your contact information-- we'll reach out to you regarding upcoming events and oppourtunities to get involved. 
-                    </Typography>
-
-                    <ContactForm />
                     
                     </div>
                 </Container>

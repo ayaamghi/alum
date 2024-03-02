@@ -147,15 +147,28 @@ const NavBar = () => {
                   ECG Alumni Association
                 </Typography>
               </RouterLink>
-              <IconButton id="menuButton" edge="end" color="inherit"
+              </Toolbar> {/*delete this tool bar  if you want to add back the hamburger menu*/}
+
+           { /*  <IconButton id="menuButton" edge="end" color="inherit"
                 onClick={toggleDrawer("right", true)}>
-                <MenuIcon />
+            <MenuIcon /> -
               </IconButton>
             </Toolbar>
-            
+            */
+  }
           </AppBar>
         </Slide>
 
+        
+      </div>
+  );
+}
+
+export default NavBar;
+
+//top nav drawer
+
+/*
         <Drawer
           anchor={"right"}
           open={state["right"]}
@@ -163,9 +176,5 @@ const NavBar = () => {
         >
           {content}
         </Drawer>
-        
-      </div>
-  );
-}
 
-export default NavBar;
+*/
