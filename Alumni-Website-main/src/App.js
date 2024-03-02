@@ -25,6 +25,7 @@ const App = () => {
   //   return <Loading />
   // }
 
+  console.log(process.env.REACT_APP_AUTH0_CLIENT_ID)
   return (  
     <div>
       <CssBaseline />

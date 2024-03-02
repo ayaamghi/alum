@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button'
 
 import '../fonts.css';
 import '../form.css';
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import {collection, addDoc, setDoc, doc} from "firebase/firestore"
 import {db} from '../../Firebase/firebase'
@@ -32,6 +33,8 @@ import {db} from '../../Firebase/firebase'
 
 export default function UpdateForm() {   
     // character limit for graduation year
+    const [captchaIsDone, setCaptchaDone] = React.useState(false)
+
     const CHARACTER_LIMIT = 4; 
     const WORD_CHARACTER_LIMIT = 280; 
     const [values, setValues] = React.useState({
@@ -145,11 +148,20 @@ export default function UpdateForm() {
                     /> 
                 </Grid> 
                 <Grid item>
-                    <Button id="submit-font" onClick={() => clickSubmit(values)} >
+                  <ReCAPTCHA className = "griditem" sitekey= {process.env.REACT_APP_RECAPTCHA_SITE} 
+  onChange={() => setCaptchaDone(true)}
+  / >
+
+                </Grid>
+
+                <Grid item>
+                    <Button disabled = {!captchaIsDone} borderColor = {!captchaIsDone ? 'blue' : 'red' } id="submit-font" onClick={() => clickSubmit(values)} >
                         <SendIcon/>
                         Submit
                     </Button>
+                    
                 </Grid>
+
             </Grid>
 
         </div>

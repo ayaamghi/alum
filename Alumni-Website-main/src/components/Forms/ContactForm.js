@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button'
 import '../fonts.css';
 import '../form.css';
 
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import CreatableSelect from 'react-select/creatable'
 import {collection, addDoc, setDoc, doc} from "firebase/firestore"
@@ -33,6 +34,11 @@ import { date } from 'date-arithmetic';
 
 
 export default function ContactForm() {   
+
+  const [captchaIsDone, setCaptchaDone] = React.useState(false)
+
+  const key = process.env.REACT_APP_RECAPTCHA_SERVER
+
     // character limit for graduation year
     const CHARACTER_LIMIT = 4; 
     const WORD_CHARACTER_LIMIT = 280; 
@@ -134,13 +140,21 @@ export default function ContactForm() {
                 />
 
                 </Grid>
+                <Grid item>
+                  <ReCAPTCHA className = "griditem" sitekey= {process.env.REACT_APP_RECAPTCHA_SITE} 
+  onChange={() => setCaptchaDone(true)}
+  / >
+
+                </Grid>
 
                 <Grid item>
-                    <Button id="submit-font" onClick={() => clickSubmit(values)} >
+                    <Button disabled = {!captchaIsDone} borderColor = {!captchaIsDone ? 'blue' : 'red' } id="submit-font" onClick={() => clickSubmit(values)} >
                         <SendIcon/>
                         Submit
                     </Button>
+                    
                 </Grid>
+
             </Grid>
         </div>
     );
