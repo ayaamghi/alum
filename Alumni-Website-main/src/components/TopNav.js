@@ -31,15 +31,6 @@ export default  function TopNav()  {
                     </RouterLink>
                 </Button>
                 <Button id="home-buttons">
-                    <RouterLink to="/alumni-news" id="router-links">
-                        <Typography
-                            variant="overline"
-                            id="centeredbuttons">
-                            Alumni News
-                        </Typography>
-                    </RouterLink>
-                </Button>
-                <Button id="home-buttons">
                     <RouterLink to="/share-your-news" id="router-links">
                         <Typography
                             variant="overline"
