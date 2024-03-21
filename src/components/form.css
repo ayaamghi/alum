@@ -1,0 +1,29 @@
+.griditem {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  margin-bottom: 40px !important;
+}
+
+#tellUsMoreGrid {
+  margin-bottom: 40px;
+}
+
+#multiline {
+  width: 500px;
+}
+
+#secondRowGrid {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  margin-bottom: 40px !important;
+}
+
+#shortDescription {
+  width: 20rem;
+}
+
+@media (max-width: 580px) {
+  #multiline {
+    width: 100%;
+  }
+}

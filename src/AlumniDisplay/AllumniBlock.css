@@ -1,0 +1,28 @@
+.alumni-spotlight-block {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .text-container {
+    padding: 10px;
+  }
+  
+  .expanded .text-container {
+    max-height: none;
+    overflow: auto;
+  }
+  

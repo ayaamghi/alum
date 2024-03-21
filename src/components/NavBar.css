@@ -1,0 +1,60 @@
+
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+#link {
+    cursor:pointer;
+}
+
+#drawer {
+    border-right: none;
+}
+
+#drawertop {
+    background-color: white;
+    height: 64px;
+}
+
+#menuButton {
+    background: transparent;
+    box-shadow: none;
+}
+
+#list {
+    padding: 0px;
+} 
+
+#appbar {
+    background-color: #5f181b;
+}
+
+#toolbar {
+    padding-left: 40px;
+    height: 70px;
+}
+
+img#toolbar-image {
+    width: 50px;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-content {
+    width: 100vw;
+}
+
+@media (min-width:426px) {
+    .menu-content {
+        width: 426px;
+    }
+}
+
+
+#drawer-button {
+    padding: 20px;
+    color: 5f181b;
+}

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Titillium+Web:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+#titlefont {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 2rem;
+  color: white;
+}
+
+#centeredbuttons {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+@media (max-width: 500px) {
+  #titlefont {
+    font-size: 1.65rem;
+  }
+  #centeredbuttons {
+    font-size: 0.7rem;
+  }
+}
+
+#bodyfont {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  padding-top: 20px;
+}
+
+#calendarfont {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#bodyfont strong {
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+#footerfont {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.1;
+}
+
+#footerfont:hover {
+  color: #b93037;
+}
+
+#footerfontline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+}
+
+#drawer-list-font {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+#login-font {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+#submit-font {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1rem;
+  color: #5f181b;
+  border: 1px solid #5f181b;
+}
+
+#header-font {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 2.8rem;
+  color: #5f181b;
+  -webkit-text-stroke: 1.25px #5f181b;
+}
+
+.profile-font {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+#spotlight-font h2 {
+  font-family: 'Titillium Web', sans-serif;
+  color: #333;
+  font-size: 2.35em;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+#spotlight-font p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25em;
+}
+
+#news-font h2 {
+  font-family: 'Titillium Web', sans-serif;
+  color: #333;
+  font-size: 2.6em;
+  margin-bottom: 0px;
+  margin-top: 14px;
+}
+
+#news-font h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+
+#news-font p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+}
+
+#news-font h3 {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1rem;
+  margin-top: 3px;
+  color: #333;
+}

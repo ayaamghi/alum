@@ -1,0 +1,49 @@
+div.root {
+  text-align: center;
+}
+
+#footerDiv {
+  background-color: #5f181b;
+  border-top: 1px solid #431214;
+  height: 290px;
+  width: 100%;
+}
+
+.footerlink {
+  text-decoration: none;
+  color: goldenrod;
+  transition: color 200ms;
+}
+
+.footertext {
+  color: white;
+  margin: 0px;
+}
+
+.footerline {
+  color: #431214;
+  margin: 0px;
+}
+
+.footeraddress {
+  color: white;
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+#centergrid {
+  padding: 0px;
+}
+
+.foot-container {
+  padding-top: 40px;
+  padding-bottom: 0px;
+}
+
+.address {
+  padding-top: 30px;
+}
+
+.iconbuttons {
+  color: white;
+}
